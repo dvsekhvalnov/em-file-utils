@@ -28,6 +28,12 @@ context "EM::FileUtils" do
         not File.exists? "./~test3"
     end
     
+    asserts("mkdir_p") do
+      EM::FileUtils::mkdir_p("./test4/test5")
+      File.directory? "./test4"
+      File.directory? "./test4/test5"      
+    end
+    
     teardown do 
         File.unlink("./~test1")
     end

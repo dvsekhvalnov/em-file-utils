@@ -25,6 +25,22 @@ module EM
         @@cache = { }
 
         ##
+        # Creates directory(s) with parents using mkdir -p command and bash expansion
+        # e.g. mkdir -p {folder/path,another/folder/path}
+        #
+        # @param [String] pathes folder path(s) to create
+        # @return [CommandBuilder] returns the command builder object
+        # 
+
+        def self.mkdir_p(paths)
+            cmd = __get(:mkdir)
+            cmd << :p
+            cmd <= paths
+            cmd
+        end
+
+
+        ##
         # Copy object using +cp -r+ command.
         #
         # @param [String] from source path
