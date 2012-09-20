@@ -1,6 +1,24 @@
 EventMachine FileUtils
 ======================
 
+** this forks ** addes new **mkdir -p {...}** command support to create single or multiple directories with all intermidiates asynchronously with EventMachine. 
+
+Example:
+
+	EM::run   
+		EM::FileUtils::mkdir_p("/home/users/project/repo/test").execute do |out|
+	        # folder is created
+	    end
+	end	
+	
+or
+
+EM::run   
+	EM::FileUtils::mkdir_p(["/home/users/project/repo/test","/home/users/project/repo/test-2","/home/users/project/repo/test-3"]).execute do |out|
+        # all 3 folders created at this point
+    end
+end	
+
 **em-file-utils** allows base file operations using UNIX commands such 
 as standard library [FileUtils][1], but returns [CommandBuilder][2] 
 objects which allows wide customizations to final call and asynchronous 
