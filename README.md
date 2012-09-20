@@ -1,7 +1,7 @@
 EventMachine FileUtils
 ======================
 
-** this forks ** addes new **mkdir -p {...}** command support to create single or multiple directories with all intermidiates asynchronously with EventMachine. 
+**this fork** addes new **mkdir -p {...}** command support to create single or multiple directories with all intermidiates asynchronously with EventMachine. 
 
 Example:
 
